@@ -9,12 +9,13 @@ import vendor.xiaomi.hardware.displayfeature_aidl.IDisplayFeatureCallback;
 
 @VintfStability
 interface IDisplayFeature {
-    void notifyBrightness(in int brightness);
-    void registerCallback(in int displayId, in IDisplayFeatureCallback callback);
-    void sendMessage(in int index, in int value, in String cmd);
-    void sendPanelCommand(in String cmd);
-    void sendPostProcCommand(in int cmd, in int value);
+    void notifyBrightness(int brightness);
+    void registerCallback(int displayId, IDisplayFeatureCallback callback);
+    void sendMessage(int what, int arg1, String payload);
+    void sendPanelCommand(String command);
+    void sendPostProcCommand(int command, int value);
     void sendRefreshCommand();
-    void setFeature(in int displayId, in int caseId, in int modeId, in int cookie);
-    void setFunction(in int displayId, in int caseId, in int modeId, in int cookie);
+    void setFeature(int displayId, int mode, int value, int cookie);
+    void setFunction(int displayId, int mode, int value, int cookie);
+    void sendGamePkgName(int displayId, int mode, int state, String packageName);
 }
