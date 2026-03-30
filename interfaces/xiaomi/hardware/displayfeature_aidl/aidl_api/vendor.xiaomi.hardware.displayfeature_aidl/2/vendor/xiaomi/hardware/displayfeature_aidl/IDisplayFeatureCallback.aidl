@@ -23,5 +23,5 @@
 package vendor.xiaomi.hardware.displayfeature_aidl;
 @VintfStability
 interface IDisplayFeatureCallback {
-  oneway void displayfeatureInfoChanged(in int caseId, in int value, in float red, in float green, in float blue);
+  void displayfeatureInfoChanged(int category, int type, float value1, float value2, float value3);
 }
